@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+
+double rectangle(const double a,const double b);
+
+double triangle(const double a,const double b, const double c);
+
+int main()
+
+{
+	double a,b,c;
+	cout<<"Введите 3 стороны";
+	cin>>a>>b>>c;
+
+	double Rectangle = rectangle(a,b);
+	double Triangle = triangle(a,b,c);
+
+	cout<<Rectangle<<" "<<Triangle;
+	return 0;
+}	
+
+double rectangle(const double a,const double b){
+	return a*b;
+}
+
+double triangle(const double a,const double b, const double c){
+	double p = (a + b + c) / 2;
+	return pow(p*(p - a)*(p - b)*(p - c),0.5);
+}
+1.3
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+double time(const double r,const double i,const double q);
+
+int main()
+
+{
+	double r,q,i;
+	cout<<"Введите сопротивление,силу тока и теплоту";
+	cin>>r>>i>>q;
+	double Time = time(r, i, q);
+
+	cout<<"Ответ в секундах "<<Time;
+	
+	return 0;
+}	
+
+double time(const double r,const double i,const double q){
+	return (q/(pow(i,2)*r));
+}
